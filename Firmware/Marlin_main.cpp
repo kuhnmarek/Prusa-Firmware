@@ -46,7 +46,7 @@
 //-//
 #include "Configuration.h"
 #include "Marlin.h"
-
+  
 #ifdef ENABLE_AUTO_BED_LEVELING
 #include "vector_3.h"
   #ifdef AUTO_BED_LEVELING_GRID
@@ -799,7 +799,7 @@ void factory_reset()
 
 
 			SET_OUTPUT(BEEPER);
-if((eSoundMode==e_SOUND_MODE_LOUD)||(eSoundMode==e_SOUND_MODE_ONCE))
+  if(eSoundMode!=e_SOUND_MODE_SILENT)
 			WRITE(BEEPER, HIGH);
 
 			while (!READ(BTN_ENC));
